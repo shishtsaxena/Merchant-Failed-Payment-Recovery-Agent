@@ -3,6 +3,10 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+razorpay.db-shm
+razorpay.db-wal
+razorpay/
+
 # C extensions
 *.so
 
