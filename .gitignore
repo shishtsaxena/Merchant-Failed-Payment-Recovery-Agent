@@ -6,6 +6,7 @@ __pycache__/
 razorpay.db-shm
 razorpay.db-wal
 razorpay/
+razorpay.db
 
 # C extensions
 *.so
