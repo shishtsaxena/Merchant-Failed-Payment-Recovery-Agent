@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Checkout</title>
+</head>
+<body>
+    <h1>Razorpay Test Checkout</h1>
+    <button id="pay-btn">Pay Now</button>
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        document.getElementById("pay-btn").onclick = function () {
+            var options = {
+                "key": "rzp_test_TXhNDxbuhaGUj3",
+                "amount": 50000,
+                "currency": "INR",
+                "name": "Test Merchant",
+                "description": "Test Transaction",
+                "order_id": "order_TXl9aDo9QDJMJg",
+                "handler": function (response) {
+                    alert("Payment ID: " + response.razorpay_payment_id);
+                    console.log(response);
+                },
+                "prefill": {
+                    "name": "Test User",
+                    "email": "test@example.com",
+                    "contact": "9999999999"
+                },
+                "theme": {
+                    "color": "#3399cc"
+                }
+            };
+            var rzp = new Razorpay(options);
+            rzp.open();
+        };
+    </script>
+</body>
+</html>
